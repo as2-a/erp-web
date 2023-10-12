@@ -1,0 +1,185 @@
+#root {
+  margin: 0 auto;
+  text-align: center;
+}
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+  -webkit-filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+  -webkit-filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+    -webkit-animation: logo-spin infinite 20s linear;
+}
+}
+
+.card {
+  padding: 2em;
+}
+
+.transaction-card{
+  background-color: #f0f0f0;
+}
+
+.textfield{
+  background-color: #ffffff;
+  color:#000000;
+  font-weight: 400;
+}
+
+.card-header {
+ background-color: #eeeeee; 
+}
+
+.column-header {
+  background-color: #eeeeee;
+  font-size: medium;
+  color: #3e5cb2;
+  font-weight: 900;
+}
+.dark-column-header {
+  background-color: #333333;
+  font-size: medium;
+  color: white;
+  font-weight: 900;
+}
+
+.dark-mode-cell {
+  background-color: #333333;
+  color: white; 
+}
+
+.textarea::placeholder {
+  color: #a3a3a3;
+}
+/* xs */
+@media (max-width: 575.98px) {
+  .textarea {
+    width: 100%;
+    font-size: 12px;
+  }
+}
+
+/* sm */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .textarea {
+    width: 50%;
+  }
+}
+
+/* md */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .textarea {
+    width: 50%;
+  }
+}
+
+/*lg*/
+@media (min-width: 992px) {
+  .textarea {
+    width: 50%;
+  }
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.light-appbar {
+  background-color: #ffffff; 
+  color: #000000;
+}
+
+.dark-appbar {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.footer {
+  background-color: #3e5cb2;
+  color: white; 
+  padding: 20px 0; 
+}
+
+@media (max-width: 768px) {
+  .column-flex {
+    flex-direction: column;
+    text-align: center; 
+  }
+}
+
+.content-container {
+  min-height: 120vh;
+  overflow-y: auto;
+}
+
+
+.column-header {
+  background-color: #eeeeee; 
+  color: #3e5cb2;
+  font-size: medium;
+  font-weight: 900;
+}
+
+.dark-column-header {
+  background-color: #333333; 
+  color: white;
+  font-size: medium;
+  font-weight: 900;
+}
+
+.card-1:hover {
+  background-color: #FF5733;
+  color: white;
+  transition: background-color 0.5s ease;
+}
+
+.card-2:hover {
+  background-color: #33FF57;
+  color: white;
+    transition: background-color 0.5s ease;
+}
+
+.card-3:hover {
+  background-color: #5733FF;
+  color: white;
+    transition: background-color 0.5s ease;
+}
+
+.card-4:hover {
+  background-color: #FFD700;
+  color: black;
+    transition: background-color 0.5s ease;
+}
+
+.card-5:hover {
+  background-color: #FF8C00;
+  color: black;
+    transition: background-color 0.5s ease;
+}
+
+.card-6:hover {
+  background-color: #5F9EA0;
+  color: white;
+    transition: background-color 0.5s ease;
+}
