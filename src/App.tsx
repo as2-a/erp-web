@@ -8,8 +8,6 @@ import React from 'react';
 import { SignIn } from './components/SignIn';
 import AuthService from './services/Auth.service';
 
-const PATH: string = "ferreteria";
-
 function App() {
   const signedIn = AuthService.isAuthenticated();
   const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
@@ -65,7 +63,7 @@ function App() {
             <Box sx={{ minHeight: '90vh' }}>
               <Routes>
                 <Route
-                  path={`${PATH}/`}
+                  path={`/`}
                   element={<Principal />}
                 />
               </Routes>
