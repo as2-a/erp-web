@@ -10,7 +10,7 @@ import {
 } from '@mui/icons-material';
 import AuthService from '../services/Auth.service';
 import React from 'react';
-import { environment } from '../environments/Dev.environment';
+import { environment } from '../environments/environment';
 
 const Principal = () => {
     const navigate = useNavigate();

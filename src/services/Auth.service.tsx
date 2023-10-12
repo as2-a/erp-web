@@ -1,7 +1,7 @@
 import axios, { AxiosResponse } from "axios"; 
 import { Login } from "../interfaces/Login.interface";
 import { User } from "../interfaces/User.interface";
-import { environment } from "../environments/Dev.environment";
+import { environment } from "../environments/environment";
 
 export default class AuthService {
   static async login(username: string, password: string): Promise<Login | null> {
