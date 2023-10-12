@@ -16,7 +16,7 @@ const Principal = () => {
     const navigate = useNavigate();
     if (!AuthService.isAuthenticated()) {
         React.useEffect(() => {
-            navigate('/ferreteria/login');
+            navigate('/login');
         }, []);
     }
 
