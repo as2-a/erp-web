@@ -12,33 +12,33 @@ export default class AuthService {
       })
       .then((response: AxiosResponse<Login>) => {
         if (response.data.code === 200 && response.data.data === true) {
-          sessionStorage.setItem("isAuthenticated", "true");
-          sessionStorage.setItem("user", JSON.stringify(response.data.user));
+          localStorage.setItem("isAuthenticated", "true");
+          localStorage.setItem("user", JSON.stringify(response.data.user));
           return response.data;
         } else {
-          sessionStorage.removeItem("isAuthenticated");
-          sessionStorage.removeItem("user");
+          localStorage.removeItem("isAuthenticated");
+          localStorage.removeItem("user");
           return response.data;
         }
       })
       .catch((error) => {
         console.error("Error al iniciar sesión:", error);
-        sessionStorage.removeItem("isAuthenticated");
-        sessionStorage.removeItem("user");
+        localStorage.removeItem("isAuthenticated");
+        localStorage.removeItem("user");
         return null;
       });
   }
 
   static logout(): void {
-    sessionStorage.removeItem("isAuthenticated");
-    sessionStorage.removeItem("user");
+    localStorage.removeItem("isAuthenticated");
+    localStorage.removeItem("user");
   }
 
   static isAuthenticated(): boolean {
-    return sessionStorage.getItem("isAuthenticated") === "true";
+    return localStorage.getItem("isAuthenticated") === "true";
   }
 
   static getUser(): User {
-    return JSON.parse(sessionStorage.getItem("user") as string);
+    return JSON.parse(localStorage.getItem("user") as string);
   }
 }
