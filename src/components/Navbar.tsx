@@ -14,8 +14,7 @@ import {
 } from '@mui/material';
 import {
     Build as BuildIcon,
-    ExitToApp as LogoutIcon,
-    Update as UpdateIcon,
+    ExitToApp as LogoutIcon
 } from '@mui/icons-material';
 import AuthService from '../services/Auth.service';
 import { User } from '../interfaces/User.interface';
@@ -65,10 +64,6 @@ const AppHeader = () => {
                                     </CardContent>
                                     <Divider />
                                     <MenuItem onClick={handleLogout}>
-                                        <UpdateIcon fontSize="small" style={{ marginRight: 8 }} />
-                                        Actualizar Cuenta
-                                    </MenuItem>
-                                    <MenuItem onClick={handleLogout}>
                                         <LogoutIcon fontSize="small" style={{ marginRight: 8 }} />
                                         Cerrar Sesión
                                     </MenuItem>
@@ -108,10 +103,6 @@ const AppHeader = () => {
                                         </Typography>
                                     </CardContent>
                                     <Divider />
-                                    <MenuItem onClick={handleLogout}>
-                                        <UpdateIcon fontSize="small" style={{ marginRight: 8 }} />
-                                        Actualizar Cuenta
-                                    </MenuItem>
                                     <MenuItem onClick={handleLogout}>
                                         <LogoutIcon fontSize="small" style={{ marginRight: 8 }} />
                                         Cerrar Sesión
