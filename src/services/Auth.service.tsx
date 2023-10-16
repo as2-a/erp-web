@@ -2,6 +2,9 @@ import axios, { AxiosResponse } from "axios";
 import { Login } from "../interfaces/Login.interface";
 import { User } from "../interfaces/User.interface";
 import { environment } from "../environments/environment";
+import CookieService from "./Cookie.service";
+
+const options: object = { expires: 7, domain: environment.domain };
 
 export default class AuthService {
   static async login(username: string, password: string): Promise<Login | null> {
@@ -12,33 +15,36 @@ export default class AuthService {
       })
       .then((response: AxiosResponse<Login>) => {
         if (response.data.code === 200 && response.data.data === true) {
-          localStorage.setItem("isAuthenticated", "true");
-          localStorage.setItem("user", JSON.stringify(response.data.user));
+          console.log("entro al if")
+          CookieService.setCookie("isAuthenticated", "true", options);
+          console.log("seteó las primeras cookies")
+          CookieService.setCookie("user", JSON.stringify(response.data.user), options);
+          console.log("seteó las segundas cookies")
           return response.data;
         } else {
-          localStorage.removeItem("isAuthenticated");
-          localStorage.removeItem("user");
+          CookieService.removeCookie("isAuthenticated");
+          CookieService.removeCookie("user");
           return response.data;
         }
       })
       .catch((error) => {
         console.error("Error al iniciar sesión:", error);
-        localStorage.removeItem("isAuthenticated");
-        localStorage.removeItem("user");
+        CookieService.removeCookie("isAuthenticated");
+        CookieService.removeCookie("user");
         return null;
       });
   }
 
   static logout(): void {
-    localStorage.removeItem("isAuthenticated");
-    localStorage.removeItem("user");
+    CookieService.removeCookie("isAuthenticated");
+    CookieService.removeCookie("user");
   }
 
   static isAuthenticated(): boolean {
-    return localStorage.getItem("isAuthenticated") === "true";
+    return CookieService.getCookie("isAuthenticated") === "true";
   }
 
   static getUser(): User {
-    return JSON.parse(localStorage.getItem("user") as string);
+    return JSON.parse(CookieService.getCookie("user") as string);
   }
 }
